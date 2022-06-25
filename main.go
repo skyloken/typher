@@ -26,21 +26,31 @@ func main() {
 	}
 
 	for s.Scan() {
-		fmt.Println(s.Text())
+		fmt.Printf("%s\r", s.Text())
+		isFirst := false
 		for _, c := range s.Text() {
+			if !isFirst {
+				if c == ' ' || c == '\t' {
+					fmt.Printf("%c", c)
+					continue
+				} else {
+					isFirst = true
+				}
+			}
 			for {
 				r, err := tty.ReadRune()
 				if err != nil {
 					log.Fatal(err)
 				}
 				if r == c {
-					fmt.Print(string(c))
+					fmt.Printf("\x1b[32m%c\x1b[0m", c)
 					break
 				}
 			}
 		}
 		fmt.Println()
 	}
+
 	err = tty.Close()
 	if err != nil {
 		log.Fatal(err)
