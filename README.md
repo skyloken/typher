@@ -10,8 +10,7 @@ $ go install github.com/skyloken/typher@latest
 
 ## Usage
 
-### From file
-
 ```console
-$ typher <target-file>
+$ typher <target>
 ```
+- `target`: File path or URL.
