@@ -13,7 +13,7 @@ $ go install github.com/skyloken/typher@latest
 ```console
 $ typher <typing-target>
 ```
-- `target`: File path or URL.
+- `typing-target`: File path or URL to be typed.
 
 ## Example
 
