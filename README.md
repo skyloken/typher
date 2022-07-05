@@ -11,6 +11,13 @@ $ go install github.com/skyloken/typher@latest
 ## Usage
 
 ```console
-$ typher <target>
+$ typher <typing-target>
 ```
 - `target`: File path or URL.
+
+## Example
+
+```console
+$ typher target.go
+$ typher https://raw.githubusercontent.com/golang/go/master/src/io/io.go
+```
